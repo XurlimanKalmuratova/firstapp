@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Contact Page
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %} 
+            {{ form.as_p }}
+            <input id="btn_create" type="submit" value="Create">
+        </form>
+    </div>
+{% endblock %}
+

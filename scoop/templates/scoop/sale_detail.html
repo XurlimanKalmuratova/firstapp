@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Detail Page
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{ product.title }}</h1>
+        <p>{{ product.description }}</p>
+        <p id="price">Price: ${{ product.price }}</p>
+        <p>Author: {{ product.author }}</p>
+        <img id="product_img" src="{{ product.image.url }}" alt="guitar">
+        <p>
+            <a href="{% url 'sale_delete' product.pk %}">Delete</a>
+        </p>
+        <p>
+            <a href="{% url 'sale_update' product.pk %}">Update</a>
+        </p>
+    </div>
+    </br>
+{% endblock %}

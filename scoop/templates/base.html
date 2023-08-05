@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Main Page
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+   <div class="page">
+        <!-- Start of Header -->
+        <div class="logo">
+            <img src="{% static 'images/gif/logo.gif' %}" alt="logo">
+        </div>
+        {% include 'include/navbar.html' %}
+        <!-- End of Header -->
+
+        <!-- Start of Content -->
+        {% block content %}
+        {% endblock %}
+        <!-- End of Content -->
+        
+        <!-- Start of Footer -->
+        {% include 'include/footer.html' %}
+        <!-- End of Footer-->
+   </div>
+</body>
+</html>

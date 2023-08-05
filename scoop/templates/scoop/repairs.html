@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Repairs Page
+{% endblock %}
+
+{% block content %}
+    {% for repair in repairs %}
+        <div class="container">
+            <h1>{{ repair.title }}</h1>
+            <img id="repair_img" src="{{ repair.image.url }}" alt="guitar">
+        </div>
+        </br>
+    {% endfor %}
+{% endblock %}
